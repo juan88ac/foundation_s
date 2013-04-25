@@ -1,0 +1,3 @@
+[submodule "foundation zurb"]
+	path = foundation/scss/foundation/components
+	url = git@github.com:zurb/foundation.git

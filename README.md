@@ -2,9 +2,10 @@ foundation_s
 ===
 
 Based on starter theme called `_s`, or `underscores` & foundation zurb framework.
+The foundation.min.css is generated using codekit and foundation components scss files. This new style is enqueue in functions.php
 
 
-Getting Started
+Getting Started with Theme functions
 ---------------
 
 If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.

@@ -156,6 +156,15 @@ require( get_template_directory() . '/inc/custom-header.php' );
 require( get_template_directory() . '/inc/foundation.php' );
 
 /**
+ * style.min.css
+ */
+function style_min_stylesheet() {
+    wp_enqueue_style( 'style.min', get_template_directory_uri() . '/css/style.min.css' );
+}
+
+add_action( 'wp_enqueue_scripts', 'style_min_stylesheet' );
+
+/**
  * Implement foundation
  */
 require( get_template_directory() . '/inc/hacks.php' );

@@ -33,3 +33,16 @@ function foundation_script() {
 }	
 	
 add_action('wp_enqueue_scripts', 'foundation_script');
+
+/**
+ * app.js Personalization JS for the site
+ */
+function foundation_app_script() {
+	wp_enqueue_script(
+		'app',
+		get_template_directory_uri() . '/js/app-ck.js',
+		array('jquery')
+	);
+}	
+	
+add_action('wp_enqueue_scripts', 'foundation_app_script');

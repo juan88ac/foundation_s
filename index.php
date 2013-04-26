@@ -13,7 +13,9 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<?php get_template_part( 'partials/content', 'slider' ); ?>
+	
+	<div id="primary" class="content-area large-8 columns">
 		<div id="content" class="site-content" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -26,7 +28,7 @@ get_header(); ?>
 					 * If you want to overload this in a child theme then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'partials/content', get_post_format() );
 				?>
 
 			<?php endwhile; ?>

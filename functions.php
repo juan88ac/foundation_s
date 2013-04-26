@@ -62,7 +62,8 @@ function _s_setup() {
 	/**
 	 * Enable support for Post Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails', array('post','slider') );
+	add_image_size( 'slider', 1000, 400, true); /* slider image side used in content/slider.php */
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -119,8 +120,16 @@ function _s_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footerbar', '_s' ),
+		'id'            => 'sidebar-2',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', '_s_widgets_init' );
@@ -165,6 +174,23 @@ function style_min_stylesheet() {
 add_action( 'wp_enqueue_scripts', 'style_min_stylesheet' );
 
 /**
- * Implement foundation
+ * Implement WP dashboard & backend hacks
  */
 require( get_template_directory() . '/inc/hacks.php' );
+
+/* 
+ * Loads the Options Panel
+ *
+ * If you're loading from a child theme use stylesheet_directory
+ * instead of template_directory
+ */
+ 
+if ( !function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/options/' );
+	require_once dirname( __FILE__ ) . '/inc/options/options-framework.php';
+}
+
+/**
+ * Implement advanced custom post type framework
+ */
+require( get_template_directory() . '/inc/acpt.php' );

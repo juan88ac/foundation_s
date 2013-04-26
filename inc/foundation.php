@@ -40,7 +40,7 @@ add_action('wp_enqueue_scripts', 'foundation_script');
 function foundation_app_script() {
 	wp_enqueue_script(
 		'app',
-		get_template_directory_uri() . '/js/app.js',
+		get_template_directory_uri() . '/js/app-ck.js',
 		array('jquery')
 	);
 }	
@@ -51,7 +51,7 @@ add_action('wp_enqueue_scripts', 'foundation_app_script');
  * app.js Personalization JS for the site
  */
 function foundation_settings_script() {
-	wp_enqueue_script('foundation-settings', get_template_directory_uri() . '/js/foundation-settings.js',array('jquery'),'1.0', true);
+	wp_enqueue_script('foundation-settings', get_template_directory_uri() . '/js/foundation-settings-ck.js',array('jquery'),'1.0', true);
 }	
 	
 add_action('wp_enqueue_scripts', 'foundation_settings_script');

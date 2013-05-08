@@ -10,7 +10,20 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no," />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<!-- Schema.org Description -->
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
+
+<!-- Setting favicon and Apple Touch Icon -->
+<link rel="apple-touch-icon" href="<?php bloginfo ("template_url");?>/images/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo ("template_url");?>/images/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo ("template_url");?>/images/touch-icon-iphone4.png">
+<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo ("template_url");?>/images/touch-icon-ipad3.png">
+<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/favicon.ico">
+
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />

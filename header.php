@@ -25,7 +25,7 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header row" role="banner">
-		<hgroup>
+		<hgroup class="hide-for-small">
 			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<?php if ( of_get_option('logo') ): ?>
@@ -40,10 +40,18 @@
 
 		<nav id="site-navigation" class="navigation-main top-bar" role="navigation">
 
-			<ul class="title-area">
+			<ul class="title-area hide-for-medium-up">
 				<!-- Title Area -->
 				<li class="name">
-					<h1><a href="#">Top Bar Title </a></h1>
+					<h1>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php if ( of_get_option('logo') ): ?>
+				            <img src="<?php echo of_get_option('logo'); ?>" />
+			            <?php else: ?>
+				            <?php bloginfo( 'name' ); ?>
+				        <?php endif; ?>
+			            </a>
+		            </h1>
 				</li>
 				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>

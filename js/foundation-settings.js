@@ -1,4 +1,4 @@
-$(document).foundation('section orbit', {
+$(function(){$(document).foundation('section orbit', {
   timer_speed: 10000,
   animation_speed: 500,
   bullets: true,
@@ -17,7 +17,5 @@ $(document).foundation('section orbit', {
   caption_class: 'orbit-caption',
   active_slide_class: 'active',
   orbit_transition_class: 'orbit-transitioning'
-},
-function (response) {
-  console.log(response.errors);
+})
 });

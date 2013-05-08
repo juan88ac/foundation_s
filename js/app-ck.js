@@ -1,1 +1,1 @@
-$(document).ready(function(){$(".top-bar li").has("ul").addClass("has-dropdown");$(".top-bar li ul").addClass("dropdown")});
+$(document).ready(function(){$(".top-bar-section li").has("ul").addClass("has-dropdown");$(".top-bar-section li ul").addClass("dropdown")});

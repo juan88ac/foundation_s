@@ -23,5 +23,6 @@
 <script>document.write('<script src=<?php echo get_template_directory_uri(); ?>/js/foundation/vendor/' + ('__proto__' in {} ? 'zepto' : 'jquery')   + '.js><\/script>');</script>
 
 <?php wp_footer(); ?>
+
 </body>
 </html>

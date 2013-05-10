@@ -12,6 +12,12 @@
 			<?php _s_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
+	
+	<?php if ( has_post_thumbnail() ): ?>
+	<div class="entry-thumbnail">
+		<?php the_post_thumbnail('single-featured'); ?>
+	</div>
+	<?php endif; ?>	
 
 	<div class="entry-content">
 		<?php the_content(); ?>

@@ -44,7 +44,7 @@ function _s_setup() {
 	/**
 	 * WordPress.com-specific functions and definitions
 	 */
-	//require( get_template_directory() . '/inc/wpcom.php' );
+	require( get_template_directory() . '/inc/wpcom.php' );
 
 	/**
 	 * Make theme available for translation
@@ -62,8 +62,10 @@ function _s_setup() {
 	/**
 	 * Enable support for Post Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails', array('post','slider') );
-	add_image_size( 'slider', 1000, 400, true); /* slider image side used in content/slider.php */
+	add_theme_support( 'post-thumbnails', array('post','slider', 'page') );
+	add_image_size( 'slider', 1000, 400, true); /* slider image side used in partials/content-slider.php */
+	add_image_size( 'single-featured', 637, 400, true); /* Single post image side used in partials/content.php */	
+	add_image_size( 'page-featured', 833, 300, true); /* Page image side used in partials/content-page.php */		
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.

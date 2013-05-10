@@ -12,12 +12,12 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+	<div id="primary" class="content-area large-10 large-centered columns">
+		<div id="content" class="site-content row" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'partials/content', 'page' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
@@ -30,5 +30,5 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>

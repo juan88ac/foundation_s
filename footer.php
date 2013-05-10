@@ -11,12 +11,63 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" class="site-footer row" role="contentinfo">
-		<div class="site-info large-12">
+		<div id="footer-sidebar" class="widget-area large-12 columns" role="complementary">
+			<?php do_action( 'before_footerbar' ); ?>
+			<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
+
+				<aside id="archives" class="widget">
+					<h1 class="widget-title"><?php _e( 'Archives', '_s' ); ?></h1>
+					<ul>
+						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+					</ul>
+				</aside>
+	
+				<aside id="meta" class="widget">
+					<h1 class="widget-title"><?php _e( 'Meta', '_s' ); ?></h1>
+					<ul>
+						<?php wp_register(); ?>
+						<li><?php wp_loginout(); ?></li>
+						<?php wp_meta(); ?>
+					</ul>
+				</aside>
+	
+			<?php endif; // end sidebar widget area ?>			
+		</div>
+		<div class="large-12 columns">
+			<div class="row">
+			<nav id="site-navigation" class="navigation-secondary top-bar" role="navigation">
+	
+				<ul class="title-area hide-for-medium-up">
+					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+				</ul>
+	  
+		        <section class="top-bar-section">
+					<?php wp_nav_menu( array( 
+						'theme_location'=> 'secondary',
+						'menu_class'	=> 'left',
+						'container'		=> '',
+						'container_class'	=> ''
+					) ); ?>
+		        </section>
+				
+			</nav><!-- #site-navigation -->
+			</div>
+		</div>
+		<div class="site-info">
 			<?php do_action( '_s_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_s' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://33themes.com/" rel="designer">33themes</a>' ); ?>
-		</div><!-- .site-info -->
+			<div class="large-4 columns">			
+				<p class="copyright row"><?php echo date("Y",time()); ?> &copy; <?php _e('All rights reserved','_s') ?> <?php bloginfo( 'name' ); ?> </p>
+			</div>
+			<div id="credits" class="large-4 columns">
+				<div class="row">
+				<?php printf( __( 'Theme: <!--%1$s--> foundation_s by %2$s.', '_s' ), '_s', '<a href="http://lonchbox.com/" rel="designer">lonchbox</a>' ); ?>
+				<a class="wordpress" href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', '_s' ); ?>">
+					<img src="http://s.wordpress.org/about/images/wpmini-grey.png" align="top"/>
+				</a>
+				</div>
+			</div>
+		</div><!-- .site-info -->	
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

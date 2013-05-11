@@ -8,7 +8,8 @@ It´s created to make theme developers life easier, mixing different frameworks 
 - Custom Header image enable. Check inc/custom-header.php for _s to see how it work. THe code is inserted in header.php
 - Rightbar.php and Leftbar Page template.
 - Footer Menu.
-- Footer Sidebar.
+- Footer Multi Sidebars. Copy from twentytwelve sistem.
+- Widgets use foundation panel styles.
 - Thumbnail enable for Pages & Posts, inserted inside partials/content-page.php, content-single.php & content.php. Image sizes sett it in functions.php
 - Slider Custom Post Type create Orbit slider, check partials/content-slider.php for orbit template. home.php show the slider.
 - footer.php have Copyright, Year, Credits and Developer info. And WP tiny logo :)
@@ -16,6 +17,7 @@ It´s created to make theme developers life easier, mixing different frameworks 
 - Clearing markup for native gallery shortcode [gallery]. The markup is inside inc/new-gallery-markup.php. NOT FINISHED: the thumbnail size is not working :(
 - Support for foundation sub-nav in footer-menu in footer.php using new markup with custom walker. check inc/custom-menu-walker.php. NOT FINISHED: it doesn´t use current-menu-item to be replace it with active class.
 - JSs hacks for WP_Nav_Menu_Widget to use foundation side-nav classes. check js/app.js
+- Comments submit button use foundation small button round styles. check is/app.js
 
 
 foundation settings

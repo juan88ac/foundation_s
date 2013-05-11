@@ -38,9 +38,7 @@
 			<div id="credits" class="large-4 columns">
 				<p class="row">
 				<?php printf( __( 'Theme: <!--%1$s--> foundation_s by %2$s.', '_s' ), '_s', '<a href="http://lonchbox.com/" rel="designer">lonchbox</a>' ); ?>
-				<a class="wordpress" href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', '_s' ); ?>">
-					<img src="http://s.wordpress.org/about/images/wpmini-grey.png" align="top"/>
-				</a>
+				<a class="wordpress" href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', '_s' ); ?>"><span aria-hidden="true" class="icon-wordpress"></span></a>
 				</p>
 			</div>
 		</div><!-- .site-info -->	

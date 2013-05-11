@@ -61,4 +61,6 @@
 
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
+	
+	<?php get_template_part( 'partials/content', 'bio' ); ?>	
 </article><!-- #post-## -->

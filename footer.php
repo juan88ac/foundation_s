@@ -11,28 +11,13 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" class="site-footer row" role="contentinfo">
-		<div id="footer-sidebar" class="widget-area large-12 columns" role="complementary">
-			<?php do_action( 'before_footerbar' ); ?>
-			<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
-
-				<aside id="archives" class="widget">
-					<h1 class="widget-title"><?php _e( 'Archives', '_s' ); ?></h1>
-					<ul>
-						<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-					</ul>
-				</aside>
-	
-				<aside id="meta" class="widget">
-					<h1 class="widget-title"><?php _e( 'Meta', '_s' ); ?></h1>
-					<ul>
-						<?php wp_register(); ?>
-						<li><?php wp_loginout(); ?></li>
-						<?php wp_meta(); ?>
-					</ul>
-				</aside>
-	
-			<?php endif; // end sidebar widget area ?>			
-		</div>
+		<?php
+			/* A sidebar in the footer? Yep. You can can customize
+			 * your footer with three columns of widgets.
+			 */
+			if ( ! is_404() )
+				get_sidebar( 'footer' );
+		?>
 		<div class="large-12 columns">
 			<div class="row">
 				<?php
@@ -51,12 +36,12 @@
 				<p class="copyright row"><?php echo date("Y",time()); ?> &copy; <?php _e('All rights reserved','_s') ?> <?php bloginfo( 'name' ); ?> </p>
 			</div>
 			<div id="credits" class="large-4 columns">
-				<div class="row">
+				<p class="row">
 				<?php printf( __( 'Theme: <!--%1$s--> foundation_s by %2$s.', '_s' ), '_s', '<a href="http://lonchbox.com/" rel="designer">lonchbox</a>' ); ?>
 				<a class="wordpress" href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyeleven' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', '_s' ); ?>">
 					<img src="http://s.wordpress.org/about/images/wpmini-grey.png" align="top"/>
 				</a>
-				</div>
+				</p>
 			</div>
 		</div><!-- .site-info -->	
 	</footer><!-- #colophon -->

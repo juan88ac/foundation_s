@@ -122,21 +122,84 @@ function _s_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', '_s' ),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s panel">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footerbar', '_s' ),
+		'name'          => __( 'Front Page Sidebar', '_s' ),
 		'id'            => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s panel">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Area One', '_s' ),
+		'id' => 'sidebar-3',
+		'description' => __( 'An optional widget area for your site footer', '_s' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s panel">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Area Two', '_s' ),
+		'id' => 'sidebar-4',
+		'description' => __( 'An optional widget area for your site footer', '_s' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s panel">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Area Three', '_s' ),
+		'id' => 'sidebar-5',
+		'description' => __( 'An optional widget area for your site footer', '_s' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s panel">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
 }
 add_action( 'widgets_init', '_s_widgets_init' );
+
+/**
+ * Count the number of footer sidebars to enable dynamic classes for the footer
+ */
+function _s_footer_sidebar_class() {
+	$count = 0;
+
+	if ( is_active_sidebar( 'sidebar-3' ) )
+		$count++;
+
+	if ( is_active_sidebar( 'sidebar-4' ) )
+		$count++;
+
+	if ( is_active_sidebar( 'sidebar-5' ) )
+		$count++;
+
+	$class = '';
+
+	switch ( $count ) {
+		case '1':
+			$class = 'large-12 small-12 columns';
+			break;
+		case '2':
+			$class = 'small-block-grid-1 large-block-grid-2';
+			break;
+		case '3':
+			$class = 'small-block-grid-1 large-block-grid-3';
+			break;
+	}
+
+	if ( $class )
+		echo 'class="' . $class . '"';
+}
 
 /**
  * Enqueue scripts and styles

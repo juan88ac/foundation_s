@@ -66,6 +66,7 @@ function _s_setup() {
 	add_image_size( 'slider', 1000, 400, true); /* slider image side used in partials/content-slider.php */
 	add_image_size( 'single-featured', 637, 400, true); /* Single post image side used in partials/content.php */	
 	add_image_size( 'page-featured', 833, 300, true); /* Page image side used in partials/content-page.php */		
+	add_image_size( 'gallery-thumbnail', 208, 220, true); /* Image size for thumbnail of a Foundation Clearing gallery inc/new-gallery-markup.php */			
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -192,6 +193,11 @@ add_action( 'wp_enqueue_scripts', 'style_min_stylesheet' );
  * Implement WP dashboard & backend hacks
  */
 require( get_template_directory() . '/inc/hacks.php' );
+
+/**
+ * Implement WP dashboard & backend hacks
+ */
+require( get_template_directory() . '/inc/new-gallery-markup.php' );
 
 /* 
  * Loads the Options Panel

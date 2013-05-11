@@ -81,7 +81,7 @@
   
 	        <section class="top-bar-section">
 				<?php wp_nav_menu( array( 
-					'theme_location'=> 'primary',
+					'theme_location'=> 'header-menu',
 					'menu_class'	=> 'left',
 					'container'		=> '',
 					'container_class'	=> ''

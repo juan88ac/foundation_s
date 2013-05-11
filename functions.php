@@ -72,7 +72,8 @@ function _s_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_s' ),
+		'header-menu' => __( 'Main Menu', '_s' ),
+		'footer-menu' => __( 'Footer Menu', '_s' ),		
 	) );
 
 	/**
@@ -190,14 +191,19 @@ function style_min_stylesheet() {
 add_action( 'wp_enqueue_scripts', 'style_min_stylesheet' );
 
 /**
- * Implement WP dashboard & backend hacks
+ * Implement WP dashboard & backend hacks.
  */
 require( get_template_directory() . '/inc/hacks.php' );
 
 /**
- * Implement WP dashboard & backend hacks
+ * Optimize [gallery] markup to use foundation clearing galleries.
  */
-require( get_template_directory() . '/inc/new-gallery-markup.php' );
+require( get_template_directory() . '/inc/custom-gallery-markup.php' );
+
+/**
+ * wp_nav_menu markup to use foundation sub-nav styles.
+ */
+require( get_template_directory() . '/inc/custom-menu-walker.php' );
 
 /* 
  * Loads the Options Panel

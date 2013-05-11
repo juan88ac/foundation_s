@@ -35,23 +35,15 @@
 		</div>
 		<div class="large-12 columns">
 			<div class="row">
-			<nav id="site-navigation" class="navigation-secondary top-bar" role="navigation">
-	
-				<ul class="title-area hide-for-medium-up">
-					<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-				</ul>
-	  
-		        <section class="top-bar-section">
-					<?php wp_nav_menu( array( 
-						'theme_location'=> 'secondary',
-						'menu_class'	=> 'left',
-						'container'		=> '',
-						'container_class'	=> ''
-					) ); ?>
-		        </section>
-				
-			</nav><!-- #site-navigation -->
+				<?php
+					wp_nav_menu( array( 
+						'walker' => new MV_Cleaner_Walker_Nav_Menu(),
+						'theme_location'=> 'footer-menu',
+						'container' => false,
+						'items_wrap'      => '<dl id="%1$s" class="sub-nav">%3$s</dl>',											
+					) );
+				?>
+
 			</div>
 		</div>
 		<div class="site-info">

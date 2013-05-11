@@ -1,4 +1,6 @@
 <?php
+//http://mattvarone.com/wordpress/cleaner-output-for-wp_nav_menu/
+
 class MV_Cleaner_Walker_Nav_Menu extends Walker {
     var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
     var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );

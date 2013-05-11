@@ -40,10 +40,9 @@
 						'walker' => new MV_Cleaner_Walker_Nav_Menu(),
 						'theme_location'=> 'footer-menu',
 						'container' => false,
-						'items_wrap'      => '<dl id="%1$s" class="sub-nav">%3$s</dl>',											
+						'items_wrap' => '<dl id="%1$s" class="sub-nav"><dt>Submenu:</dt>%3$s</dl>',											
 					) );
 				?>
-
 			</div>
 		</div>
 		<div class="site-info">

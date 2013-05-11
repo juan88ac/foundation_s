@@ -12,4 +12,8 @@ $(document).ready(function() {
 	$('aside.widget_nav_menu ul.menu').addClass("side-nav");
 	$('aside.widget_nav_menu ul.menu li.current-menu-item').addClass("active");	
 
+	/* WORDPRESS comments form ------------- */
+
+	$('#comments .form-submit input#submit').addClass("button small round");
+
 });

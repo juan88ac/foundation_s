@@ -53,6 +53,19 @@ remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
+/*===================================================================================
+ * Add Author Links
+ * =================================================================================*/
+function add_to_author_profile( $contactmethods ) {
+	$contactmethods['rss_url'] = 'RSS URL';
+	$contactmethods['google_profile'] = 'Google Profile URL';
+	$contactmethods['twitter_profile'] = 'Twitter Profile URL';
+	$contactmethods['facebook_profile'] = 'Facebook Profile URL';
+	$contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
+	return $contactmethods;
+}
+add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
+
 /*
 * detect visitor browser
 */

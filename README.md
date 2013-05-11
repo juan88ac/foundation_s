@@ -13,11 +13,14 @@ It´s created to make theme developers life easier, mixing different frameworks 
 - Thumbnail enable for Pages & Posts, inserted inside partials/content-page.php, content-single.php & content.php. Image sizes sett it in functions.php
 - Slider Custom Post Type create Orbit slider, check partials/content-slider.php for orbit template. home.php show the slider.
 - footer.php have Copyright, Year, Credits and Developer info. And WP tiny logo :)
-- hacks.php file with some WP core hacks, like remove useless widgets, wp logo from admin bar, logo from login, and more.
+- hacks.php file with some WP core hacks, like remove useless widgets, wp logo from admin bar, logo from login and more.
 - Clearing markup for native gallery shortcode [gallery]. The markup is inside inc/new-gallery-markup.php. NOT FINISHED: the thumbnail size is not working :(
 - Support for foundation sub-nav in footer-menu in footer.php using new markup with custom walker. check inc/custom-menu-walker.php. NOT FINISHED: it doesn´t use current-menu-item to be replace it with active class.
 - JSs hacks for WP_Nav_Menu_Widget to use foundation side-nav classes. check js/app.js
 - Comments submit button use foundation small button round styles. check is/app.js
+- Use of FontIcons by http://icomoon.io/app. Styles in scss/icon-fonts.scss, how to use in fonts/index.html
+- Social fields for author profile. Facebook, Google Plus, Twitter & Linkedin.
+- Author Bio template under post inside partials/content-bio.php. Use font icons for social networks links.
 
 
 foundation settings

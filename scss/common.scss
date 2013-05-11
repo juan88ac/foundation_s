@@ -1,3 +1,14 @@
+@import "icon-fonts";
 li {
 	list-style-position: inside;
+}
+.callout a {
+	color: #fff;
+}
+.author-bio {
+	display: inline-block;
+	margin-top: 20px;
+	.author-description blockquote a:hover {
+		text-decoration: underline !important;
+	}
 }

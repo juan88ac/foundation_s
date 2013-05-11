@@ -3,6 +3,17 @@ foundation_s
 
 Based on starter theme called `_s`, or `underscores` & foundation zurb framework. check http://foundation.zurb.com/
 
+It´s created to make theme developers life easier, mixing different frameworks which simplify the launch of a new project. All this frameworks handle Custom post Types creation, Metaboxes, Responsive design, Theme options features.
+
+- Custom Header image enable. Check inc/custom-header.php for _s to see how it work. THe code is inserted in header.php
+- Rightbar.php and Leftbar Page template.
+- Footer Menu.
+- Footer Sidebar.
+- Thumbnail enable for Pages & Posts, inserted inside partials/content-page.php, content-single.php & content.php. Image sizes sett it in functions.php
+- Slider Custom Post Type create Orbit slider, check partials/content-slider.php for orbit template. home.php show the slider.
+- footer.php have Copyright, Year, Credits and Developer info. And WP tiny logo :)
+- hacks.php file with some WP core hacks, like remove useless widgets, wp logo from admin bar, logo from login, and more.
+- Clearing markup for native gallery shortcode [gallery]. The markup is inside inc/new-gallery-markup.php. NOT FINISHED: the thumbnail size is not working :(
 
 
 foundation settings
@@ -10,20 +21,22 @@ foundation settings
 
 - The foundation.min.css is generated using codekit and foundation components scss files as codekit framework. Thank good they don´t use COMPASS :)
 - scss/foundation have _variables.scss for foundation dimentions, gutter, etc. And foundation.scss wich calls all foundation scss files, if you don´t use codekit isert there the foundation scss files.
-- foundation javascrips are enqueued by inc/functions.php.
+- foundation javascrips are enqueued by inc/foundation.php.
 - js/foundation-setttings.js is to write foundation modules variables and settings. (not finish yet)
 - All foundation js files are in js/foundation
 - app.js is special js for theme configuration, as add class for dropdown menu works.
 - vento.js is in the footer.php.
+- top-bar navigation enable, its display site name in < ul.title-area .name > and use .hide-for-small to remove < header hgroup > for mobile screens.
 
 
 
-theme options frameowrk
+theme options framework
 ===
 
 Thanx @davinsays for create this https://github.com/devinsays/options-framework-theme, foundation_s is fully integrated with this framework
 
 - Just edit options.php file to create the options fields.
+- Logo field set and inserted into image in header h1. If there is not image will show the site name.
 
 
 
@@ -32,7 +45,7 @@ Advanced Custom Post Types Framework
 
 @kevindees invet this easy code :) I prefer to use this than plugins, it also create nice metaboxes and taxonomies :). check https://github.com/kevindees/advanced_custom_post_types
 
-- foundation_s load the framwork using inc/acpt.php
+- foundation_s load the framework using inc/acpt.php
 - create post types, taxonomies & metaboxes in inc/acpt.php
 
 
@@ -42,9 +55,13 @@ SCSS
 
 NOTE: style.css have the basic content styles from _s. I remove the rest becasue prefer the foudnation modernizr.
 
+- style.scss (import styles)
 - common.scss
-- header.scss
-- style.scss
+- header.scss (import slider.scss) for Orbit.
+- footer.scss
+- content.scss (for all post and pages content)
+- sidebar.scss
+
 
 
 

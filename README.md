@@ -14,6 +14,8 @@ It´s created to make theme developers life easier, mixing different frameworks 
 - footer.php have Copyright, Year, Credits and Developer info. And WP tiny logo :)
 - hacks.php file with some WP core hacks, like remove useless widgets, wp logo from admin bar, logo from login, and more.
 - Clearing markup for native gallery shortcode [gallery]. The markup is inside inc/new-gallery-markup.php. NOT FINISHED: the thumbnail size is not working :(
+- Support for foundation sub-nav in footer-menu in footer.php using new markup with custom walker. check inc/custom-menu-walker.php. NOT FINISHED: it doesn´t use current-menu-item to be replace it with active class.
+- JSs hacks for WP_Nav_Menu_Widget to use foundation side-nav classes. check js/app.js
 
 
 foundation settings

@@ -38,8 +38,8 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header row" role="banner">
-		<hgroup class="hide-for-small">
+	<header id="masthead" class="site-header" role="banner">
+		<hgroup class="hide-for-small row">
 			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<?php if ( of_get_option('logo') ): ?>
@@ -51,17 +51,18 @@
             </h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
-
+		
+		<div class="header-image row">
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) { ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 			</a>
 		<?php } // if ( ! empty( $header_image ) ) ?>
-
-
-
-		<nav id="site-navigation" class="navigation-main top-bar" role="navigation">
+		</div>
+		
+		<div class="main-menu-fixed" data-magellan-expedition="fixed">
+		<nav id="site-navigation" class="navigation-main top-bar row" role="navigation">
 
 			<ul class="title-area hide-for-medium-up">
 				<!-- Title Area -->
@@ -90,6 +91,7 @@
 	        </section>
 			
 		</nav><!-- #site-navigation -->
+		</div>
 
 	</header><!-- #masthead -->
 

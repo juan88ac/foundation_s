@@ -34,6 +34,7 @@ foundation settings
 - app.js is special js for theme configuration, as add class for dropdown menu works.
 - vento.js is in the footer.php.
 - top-bar navigation enable, its display site name in < ul.title-area .name > and use .hide-for-small to remove < header hgroup > for mobile screens.
+- top-bar use magellan plugin to fix the nav when scroll. check header.php
 
 
 

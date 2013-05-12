@@ -1,0 +1,11 @@
+li.comment {
+	list-style: none;
+	article.comment {
+		footer {
+			margin-bottom: 15px !important;
+		}
+		.reply {
+			text-align: right;
+		}
+	}
+}

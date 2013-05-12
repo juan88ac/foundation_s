@@ -15,5 +15,7 @@ $(document).ready(function() {
 	/* WORDPRESS comments form ------------- */
 
 	$('#comments .form-submit input#submit').addClass("button small round");
+	$('#comments a.comment-reply-link').addClass("button small round");	
+	
 
 });

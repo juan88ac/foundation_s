@@ -9,3 +9,13 @@ li.comment {
 		}
 	}
 }
+#comments {
+	.comment-form-comment {
+		textarea {
+			height: 200px;
+		}
+	}
+	.required {
+		color: red;
+	}
+}

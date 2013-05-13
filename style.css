@@ -81,17 +81,11 @@ foundation_s is based on Underscores http://underscores.me/, (C) 2012-2013 Autom
 /* =Content
 ----------------------------------------------- */
 
-.sticky {
-}
 .hentry {
 	margin: 0 0 1.5em;
 }
 .byline {
 	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
 }
 .entry-content,
 .entry-summary {

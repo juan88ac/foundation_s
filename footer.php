@@ -11,6 +11,7 @@
 	</div><!-- #main -->
 
 	<footer id="colophon" class="site-footer row" role="contentinfo">
+		<div class="large-12 small-12 columns">
 		<?php
 			/* A sidebar in the footer? Yep. You can can customize
 			 * your footer with three columns of widgets.
@@ -18,19 +19,18 @@
 			if ( ! is_404() )
 				get_sidebar( 'footer' );
 		?>
-		<div class="large-12 columns">
-			<div class="row">
-				<?php
-					wp_nav_menu( array( 
-						'walker' => new MV_Cleaner_Walker_Nav_Menu(),
-						'theme_location'=> 'footer-menu',
-						'container' => false,
-						'items_wrap' => '<dl id="%1$s" class="sub-nav"><dt>Submenu:</dt>%3$s</dl>',											
-					) );
-				?>
-			</div>
 		</div>
-		<div class="site-info">
+		<div class="large-12 columns">
+			<?php
+				wp_nav_menu( array( 
+					'walker' => new MV_Cleaner_Walker_Nav_Menu(),
+					'theme_location'=> 'footer-menu',
+					'container' => false,
+					'items_wrap' => '<dl id="%1$s" class="sub-nav"><dt>Submenu:</dt>%3$s</dl>',											
+				) );
+			?>
+		</div>
+		<div class="site-info large-12 columns">
 			<?php do_action( '_s_credits' ); ?>
 			<div class="large-4 columns">			
 				<p class="copyright row"><?php echo date("Y",time()); ?> &copy; <?php _e('All rights reserved','_s') ?> <?php bloginfo( 'name' ); ?> </p>
@@ -43,6 +43,7 @@
 			</div>
 		</div><!-- .site-info -->	
 	</footer><!-- #colophon -->
+	
 </div><!-- #page -->
 
 <script>

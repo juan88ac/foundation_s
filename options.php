@@ -103,7 +103,7 @@ function optionsframework_options() {
 	$options = array();
 
 		$options[] = array(
-			'name' => __('Style Settings', 'options_framework_theme'),
+			'name' => __('Brand Settings', 'options_framework_theme'),
 			'type' => 'heading');
 	
 		$options[] = array(
@@ -112,6 +112,49 @@ function optionsframework_options() {
 		'id' => 'logo',
 		'type' => 'upload'
 		);
+		
+		$options[] = array(
+		'name' => __('Page background color', 'options_framework_theme'),
+		'desc' => __('The color for the page content background.', 'options_framework_theme'),
+		'id' => 'page_back_color',
+		'type' => 'color'
+		);
+		
+		$options[] = array(
+		'name' => __('Links color', 'options_framework_theme'),
+		'desc' => __('The color for the links.', 'options_framework_theme'),
+		'id' => 'link_color',
+		'type' => 'color');
+		
+		$options[] = array(
+		'name' => __('Links on hover color', 'options_framework_theme'),
+		'desc' => __('The color for the links on hovered.', 'options_framework_theme'),
+		'id' => 'link_hover_color',
+		'type' => 'color');		
+
+		$options[] = array(
+		'name' => __('Menu bar backgroud color', 'options_framework_theme'),
+		'desc' => __('The color for background of the menu bar.', 'options_framework_theme'),
+		'id' => 'back_color_menu',
+		'type' => 'color');
+				
+		$options[] = array(
+		'name' => __('Menu bar links color', 'options_framework_theme'),
+		'desc' => __('The color for the links in the menu bar.', 'options_framework_theme'),
+		'id' => 'link_color_menu',
+		'type' => 'color');
+		
+		$options[] = array(
+		'name' => __('Menu bar links hover color', 'options_framework_theme'),
+		'desc' => __('The color for the links in the menu bar.', 'options_framework_theme'),
+		'id' => 'link_hover_color_menu',
+		'type' => 'color');
+
+		$options[] = array(
+		'name' => __('Menu bar button hover color', 'options_framework_theme'),
+		'desc' => __('The color for the links in the menu bar.', 'options_framework_theme'),
+		'id' => 'button_hover_color_menu',
+		'type' => 'color');
 
 
 	return $options;

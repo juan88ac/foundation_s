@@ -102,6 +102,7 @@ function optionsframework_options() {
 
 	$options = array();
 
+		/* Site personalizacion */
 		$options[] = array(
 			'name' => __('Brand Settings', 'options_framework_theme'),
 			'type' => 'heading');
@@ -112,6 +113,14 @@ function optionsframework_options() {
 		'id' => 'logo',
 		'type' => 'upload'
 		);
+		
+		$options[] = array(
+		'name' => __('Custom Typography', 'options_framework_theme'),
+		'desc' => __('Custom typography options.', 'options_framework_theme'),
+		'id' => "custom_typography",
+		'std' => $typography_defaults,
+		'type' => 'typography',
+		'options' => $typography_options );
 		
 		$options[] = array(
 		'name' => __('Page background color', 'options_framework_theme'),
@@ -155,6 +164,151 @@ function optionsframework_options() {
 		'desc' => __('The color for the links in the menu bar.', 'options_framework_theme'),
 		'id' => 'button_hover_color_menu',
 		'type' => 'color');
+		
+		/* Social networks links */
+		$options[] = array(
+			'name' => __('Social Networks', 'options_framework_theme'),
+			'type' => 'heading');
+	
+		$options[] = array(
+		'name' => __('Facebook Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'fb_profile',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Facebook Page', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'fb_page',
+		'type' => 'text'
+		);
+		
+		$options[] = array(
+		'name' => __('Twitter Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'twitter',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Linkedin Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'linkedin',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('WordPress.org Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'wp_org_profile',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Youtube Channel', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'youtube_channel',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Vimeo Channel', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'vimeo_channel',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Google+ Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'google_plus',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Instagram Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'instagram',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Flickr Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'flickr',
+		'type' => 'text'
+		);
+		
+		$options[] = array(
+		'name' => __('Dribbble Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'dribbble',
+		'type' => 'text'
+		);
+
+		/* Contact details - Used in contact template */
+		$options[] = array(
+			'name' => __('Contact Details', 'options_framework_theme'),
+			'type' => 'heading');
+	
+		$options[] = array(
+		'name' => __('Address', 'options_framework_theme'),
+		'desc' => __('i.e: Very long Av. N12, Calle Orell 4, 5ºA', 'options_framework_theme'),
+		'id' => 'address',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Postal Code', 'options_framework_theme'),
+		'desc' => __('i.e: 007340', 'options_framework_theme'),
+		'id' => 'postal_code',
+		'class' => 'mini',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Location', 'options_framework_theme'),
+		'desc' => __('i.e: Alaró - Baleares - Spain', 'options_framework_theme'),
+		'id' => 'location',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Phone', 'options_framework_theme'),
+		'desc' => __('i.e: +34 971 00 00 00', 'options_framework_theme'),
+		'id' => 'phone',
+		'class' => 'mini',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Email', 'options_framework_theme'),
+		'desc' => __('i.e: info[at]domain[dot]com', 'options_framework_theme'),
+		'id' => 'email',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Google Maps', 'options_framework_theme'),
+		'desc' => __('Paste full url.', 'options_framework_theme'),
+		'id' => 'google_maps',
+		'type' => 'text'
+		);
+		
+
+		/* Legal details - Used in footer.php adn legal template */
+		$options[] = array(
+			'name' => __('Footer Links', 'options_framework_theme'),
+			'type' => 'heading');
+		
+		$options[] = array(
+		'name' => __('Select Pages', 'options_framework_theme'),
+		'desc' => __('Selected pages will show as footer links. Choose pages like: Legal, Impressum, Copyrights, Credits', 'options_framework_theme'),
+		'id' => 'footer_pages',
+		'type' => 'multicheck',
+		'options' => $options_pages);		
+		
 
 
 	return $options;

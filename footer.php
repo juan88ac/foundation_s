@@ -30,10 +30,36 @@
 				) );
 			?>
 		</div>
+		
 		<div class="site-info large-12 columns">
 			<?php do_action( '_s_credits' ); ?>
 			<div class="large-4 columns">			
 				<p class="copyright row"><?php echo date("Y",time()); ?> &copy; <?php _e('All rights reserved','_s') ?> <?php bloginfo( 'name' ); ?> </p>
+			</div>
+			<div class="large-4 columns">
+				<dl id="legal" class="sub-nav">
+					<?php
+					$footerPages = of_get_option('footer_pages');
+					$footerParam;
+					foreach($footerPages as $key => $value){
+						if($value == 1){
+							$footerParam[] = $key;
+						}
+					}
+					$customFooterPages = array(
+					  'post_type' => 'page',
+					  'post__in' => $footerParam,
+					  'order' => 'ASC',
+					  'orderby' => 'menu_order'
+					  );
+					?>
+					<?php
+					$gp_query= NULL;
+					$gp_query = new WP_Query($customFooterPages);
+					if( $gp_query->have_posts() ): while ( $gp_query->have_posts() ) : $gp_query->the_post();  ?>	
+							<dd><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></dd>
+					<?php endwhile; endif; ?>
+				</dl>
 			</div>
 			<div id="credits" class="large-4 columns">
 				<p class="row">

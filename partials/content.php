@@ -10,9 +10,13 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php _s_posted_on(); ?>
+			<?php _s_posted_on(); ?> <?php edit_post_link( __( 'Edit', '_s' ), '<span class="tiny button round edit-link">', '</span>' ); ?>
+			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+				<span class="comments-link small button round"><span aria-hidden="true" class="icon-comment-fill"></span> <?php comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) ); ?></span>
+			<?php endif; ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
+		
 	</header><!-- .entry-header -->
 	
 	<?php if ( has_post_thumbnail() ): ?>
@@ -34,15 +38,18 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
+	<ul class="no-bullet">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', '_s' ) );
 				if ( $categories_list && _s_categorized_blog() ) :
 			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', '_s' ), $categories_list ); ?>
-			</span>
+			<li>
+				<span aria-hidden="true" class="icon-bookmark"></span>
+				<span class="radius secondary label"><?php _e('Posted in','_s'); ?></span>
+				<?php printf( __( '%1$s', '_s' ), $categories_list ); ?>
+			</li>
 			<?php endif; // End if categories ?>
 
 			<?php
@@ -50,18 +57,13 @@
 				$tags_list = get_the_tag_list( '', __( ', ', '_s' ) );
 				if ( $tags_list ) :
 			?>
-			<span class="sep"> | </span>
-			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', '_s' ), $tags_list ); ?>
-			</span>
+			<li>
+				<span aria-hidden="true" class="icon-tags">
+				<span class="radius secondary label"><?php _e('Tagged ','_s'); ?></span>			
+				<?php printf( __( '%1$s', '_s' ), $tags_list ); ?>
+			</li>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="sep"> | </span>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) ); ?></span>
-		<?php endif; ?>
-
-		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+	</ul>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

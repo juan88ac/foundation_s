@@ -37,6 +37,10 @@
 				<p class="copyright row"><?php echo date("Y",time()); ?> &copy; <?php _e('All rights reserved','_s') ?> <?php bloginfo( 'name' ); ?> </p>
 			</div>
 			<div class="large-4 columns">
+			<?php /*Custom footer links*/
+				$footerPages = of_get_option('footer_pages');
+			?>
+			<?php if($footerPages != ''): ?>			
 				<dl id="legal" class="sub-nav">
 					<?php
 					$footerPages = of_get_option('footer_pages');
@@ -60,6 +64,8 @@
 							<dd><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></dd>
 					<?php endwhile; endif; wp_reset_query(); ?>
 				</dl>
+			<?php endif; ?>				
+			</div>
 			</div>
 			<div id="credits" class="large-4 columns">
 				<p class="row">

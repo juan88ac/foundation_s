@@ -7,8 +7,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+	<div id="primary" class="content-area large-10 large-centered columns">
+		<div id="content" class="site-content row" role="main">
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">

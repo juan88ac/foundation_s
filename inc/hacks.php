@@ -150,11 +150,11 @@ remove_submenu_page ( 'plugins.php', 'plugin-editor.php' ); // Plugins-->Editor
 * remove default widgets
 */
 function unregister_default_wp_widgets() {
-  unregister_widget('WP_Widget_Pages');
-  unregister_widget('WP_Widget_Calendar');
+  //unregister_widget('WP_Widget_Pages');
+  //unregister_widget('WP_Widget_Calendar');
   //unregister_widget('WP_Widget_Archives');
-  unregister_widget('WP_Widget_Meta');
-  unregister_widget('WP_Widget_Search');
+  //unregister_widget('WP_Widget_Meta');
+  //unregister_widget('WP_Widget_Search');
   //unregister_widget('WP_Widget_Text');
   //unregister_widget('WP_Widget_Categories');
   //unregister_widget('WP_Widget_Recent_Posts');

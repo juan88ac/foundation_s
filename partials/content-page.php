@@ -10,7 +10,7 @@
 	
 	<?php if ( has_post_thumbnail() ): ?>
 	<div class="entry-thumbnail">
-		<?php if ( is_page_template('rightbar.php') || is_page_template('leftbar.php') ): ?>
+		<?php if ( is_page_template('template-rightbar.php') || is_page_template('template-leftbar.php') ): ?>
 			<?php the_post_thumbnail('single-featured'); ?>
 		<?php else: ?>
 			<?php the_post_thumbnail('page-featured'); ?>

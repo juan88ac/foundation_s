@@ -67,7 +67,9 @@ Thanx @davinsays for create this https://github.com/devinsays/options-framework-
 Advanced Custom Post Types Framework
 ===
 
-@kevindees invet this easy code :) I prefer to use this than plugins, it also create nice metaboxes and taxonomies :). check https://github.com/kevindees/advanced_custom_post_types
+IMPORTANT: Don´t know why but when create the .zip file to download form github it doesn´t bring the config.php file from this framework, please create a config.php inside of the acpt folder using this as a base: https://github.com/kevindees/advanced_custom_post_types/blob/master/sample-config.php
+
+@kevindees create this easy code :) I prefer to use this than plugins, it also create nice metaboxes and taxonomies :). check https://github.com/kevindees/advanced_custom_post_types
 
 - foundation_s load the framework using inc/acpt.php
 - create post types, taxonomies & metaboxes in inc/acpt.php

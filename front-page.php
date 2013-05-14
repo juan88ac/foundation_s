@@ -12,7 +12,9 @@
  */
 
 get_header(); ?>
-	
+
+	<?php get_template_part( 'partials/content', 'slider' ); ?>
+		
 	<div id="primary" class="content-area large-8 columns">
 		<div id="content" class="site-content" role="main">
 
@@ -42,5 +44,5 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('front'); ?>
 <?php get_footer(); ?>

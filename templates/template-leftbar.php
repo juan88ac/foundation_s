@@ -11,7 +11,7 @@ Template Name: Left Sidebar
  */
 
 get_header(); ?>
-<?php get_sidebar(); ?>
+<?php get_sidebar('left'); ?>
 
 	<div id="primary" class="content-area large-8 columns">
 		<div id="content" class="site-content" role="main">

@@ -58,7 +58,7 @@
 					$gp_query = new WP_Query($customFooterPages);
 					if( $gp_query->have_posts() ): while ( $gp_query->have_posts() ) : $gp_query->the_post();  ?>	
 							<dd><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></dd>
-					<?php endwhile; endif; ?>
+					<?php endwhile; endif; wp_reset_query(); ?>
 				</dl>
 			</div>
 			<div id="credits" class="large-4 columns">

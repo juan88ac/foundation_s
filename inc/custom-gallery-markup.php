@@ -32,13 +32,13 @@ function custom_gallery($attr) {
 	}
 
 	extract(shortcode_atts(array(
-		//'order'      => 'ASC',
-		//'orderby'    => 'menu_order ID',
+		'order'      => 'ASC',
+		'orderby'    => 'menu_order ID',
 		'id'         => $post->ID,
 		'itemtag'    => 'div',
 		'icontag'    => 'div',
 		'captiontag' => 'p',
-		//'columns'    => 4,
+		'columns'    => 4,
 		'size'       => 'gallery-thumbnail',
 		'include'    => '',
 		'exclude'    => ''

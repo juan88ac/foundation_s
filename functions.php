@@ -63,7 +63,8 @@ function _s_setup() {
 	 * Enable support for Post Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails', array('post','slider', 'page') );
-	add_image_size( 'slider', 1000, 400, true); /* slider image side used in partials/content-slider.php */
+	add_image_size( 'slider', 1000, 400, true); /* slider image size used in partials/content-slider.php */
+	add_image_size( 'template-slider', 667, 400, true); /* slider image size for Slider Template */	
 	add_image_size( 'single-featured', 637, 400, true); /* Single post image side used in partials/content.php */	
 	add_image_size( 'page-featured', 833, 300, true); /* Page image side used in partials/content-page.php */		
 	add_image_size( 'gallery-thumbnail', 208, 220, true); /* Image size for thumbnail of a Foundation Clearing gallery inc/new-gallery-markup.php */			
@@ -120,34 +121,34 @@ add_action( 'after_setup_theme', '_s_register_custom_background' );
  */
 function _s_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', '_s' ),
+		'name'          => __( 'Front Page Sidebar', '_s' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
 	register_sidebar( array(
-		'name'          => __( 'Front Page Sidebar', '_s' ),
+		'name'          => __( 'Sidebar Right', '_s' ),
 		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
-	
+
 	register_sidebar( array(
-		'name' => __( 'Footer Area One', '_s' ),
-		'id' => 'sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', '_s' ),
+		'name'          => __( 'Sidebar Left', '_s' ),
+		'id'            => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel callout">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h4 class="widget-title">',
-		'after_title' => '</h4>',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Two', '_s' ),
+		'name' => __( 'Footer Area One', '_s' ),
 		'id' => 'sidebar-4',
 		'description' => __( 'An optional widget area for your site footer', '_s' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel callout">',
@@ -157,8 +158,18 @@ function _s_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Area Three', '_s' ),
+		'name' => __( 'Footer Area Two', '_s' ),
 		'id' => 'sidebar-5',
+		'description' => __( 'An optional widget area for your site footer', '_s' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s panel callout">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Area Three', '_s' ),
+		'id' => 'sidebar-6',
 		'description' => __( 'An optional widget area for your site footer', '_s' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s panel callout">',
 		'after_widget' => "</aside>",
@@ -174,13 +185,13 @@ add_action( 'widgets_init', '_s_widgets_init' );
 function _s_footer_sidebar_class() {
 	$count = 0;
 
-	if ( is_active_sidebar( 'sidebar-3' ) )
-		$count++;
-
 	if ( is_active_sidebar( 'sidebar-4' ) )
 		$count++;
 
 	if ( is_active_sidebar( 'sidebar-5' ) )
+		$count++;
+
+	if ( is_active_sidebar( 'sidebar-6' ) )
 		$count++;
 
 	$class = '';

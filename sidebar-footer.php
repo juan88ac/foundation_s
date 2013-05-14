@@ -12,27 +12,27 @@
 	 *
 	 * If none of the sidebars have widgets, then let's bail early.
 	 */
-	if (   ! is_active_sidebar( 'sidebar-3'  )
-		&& ! is_active_sidebar( 'sidebar-4' )
-		&& ! is_active_sidebar( 'sidebar-5'  )
+	if (   ! is_active_sidebar( 'sidebar-4'  )
+		&& ! is_active_sidebar( 'sidebar-5' )
+		&& ! is_active_sidebar( 'sidebar-6'  )
 	)
 		return;
 	// If we get this far, we have widgets. Let do this.
 ?>
 <ul id="supplementary" <?php _s_footer_sidebar_class(); ?>>
-	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
 	<li id="first" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-3' ); ?>
 	</li><!-- #first .widget-area -->
 	<?php endif; ?>
 
-	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
+	<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
 	<li id="second" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-4' ); ?>
 	</li><!-- #second .widget-area -->
 	<?php endif; ?>
 
-	<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
+	<?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
 	<li id="third" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-5' ); ?>
 	</li><!-- #third .widget-area -->

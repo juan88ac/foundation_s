@@ -90,8 +90,7 @@
             '<div class="comment-form-author row collapse">' . 
                 '<div class="small-3 columns">
                 	<span class="prefix radius">
-                		<label for="author">' . __( 'Your Name', '_s') . '
-                	' . ( $req ? '<strong class="required">*</strong></label>
+                		<label for="author">' . __( 'Your Name', '_s') . ( $req ? '<strong class="required">*</strong></label>
                 	</span>' : '' ) . 
                 '</div>' .
             	'<div class="small-9 columns">
@@ -103,23 +102,21 @@
             '<div class="comment-form-email row collapse">' . 
                 '<div class="small-3 columns">
                 	<span class="prefix radius">
-                		<label for="email">' . __( 'Your Email' ) . '
-                	' . ( $req ? '<strong class="required">*</strong></label> 
+                		<label for="email">' . __( 'Your Email', '_s' ) . ( $req ? '<strong class="required">*</strong></label> 
                 	</span>' : '' ) .
                 '</div>' .
             	'<div class="small-9 columns">
-            		<input id="email" placeholder="your-real-email@example.com" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-                '" size="30"' . $aria_req . ' />
+            		<input id="email" placeholder="' . __( 'your-real-email@example.com', '_s' ) . '" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . ' />
                 </div>' .
             '</div>',
             'url' => 
             '<div class="comment-form-url row collapse">' .
     			'<label class="hide" for="url">' . __( 'Website', '_s' ) . '</label>' .            
-				'<div class="small-3 large-2 columns">				
+				'<div class="small-3 columns">				
 					<span class="prefix radius">http://</span>
 				</div>' .
-				'<div class="small-9 large-10 columns">
-					<input id="url" name="url" placeholder="http://your-site-name.com" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> 
+				'<div class="small-9 columns">
+					<input id="url" name="url" placeholder="' . __( 'http://your-site-name.com', '_s' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /> 
 				</div>
             </div>'
         )
@@ -132,6 +129,10 @@
     'comment_notes_after' => '',
     'title_reply' => '<h5>' . __( 'Please Post Your Comments & Reviews', '_s') . '</h5>'
 );
-	comment_form($comments_args, $post_id);?>
+	comment_form($comments_args, $post_id);
+	$req = get_option('require_name_email');
+	$commenter = wp_get_current_commenter();
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+	?>
 	</div>
 </div><!-- #comments -->

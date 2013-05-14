@@ -12,8 +12,6 @@
  */
 
 get_header(); ?>
-
-	<?php get_template_part( 'partials/content', 'slider' ); ?>
 	
 	<div id="primary" class="content-area large-8 columns">
 		<div id="content" class="site-content" role="main">

@@ -64,8 +64,7 @@
 							<dd><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></dd>
 					<?php endwhile; endif; wp_reset_query(); ?>
 				</dl>
-			<?php endif; ?>				
-			</div>
+			<?php endif; ?>
 			</div>
 			<div id="credits" class="large-4 columns">
 				<p class="row">

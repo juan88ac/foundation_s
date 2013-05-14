@@ -5,22 +5,35 @@ Based on starter theme called `_s`, or `underscores` & foundation zurb framework
 
 It´s created to make theme developers life easier, mixing different frameworks which simplify the launch of a new project. All this frameworks handle Custom post Types creation, Metaboxes, Responsive design, Theme options features.
 
-- Custom Header image enable. Check inc/custom-header.php for _s to see how it work. THe code is inserted in header.php
-- Rightbar.php and Leftbar Page template.
-- Footer Menu.
-- Footer Multi Sidebars. Copy from twentytwelve sistem.
+- Custom Header image enable. Check inc/custom-header.php for _s to see how it work. The code is inserted in header.php
+- Custom Logo inserted into image in < header h1 a >. If there is not image will show the site name.
+- Footer Menu. As Submenu using foundation sub-nav styles.
+- Footer Multi Sidebars, change to have one, two o three columns. Copy from twentytwelve system.
 - Widgets use foundation panel styles.
-- Thumbnail enable for Pages & Posts, inserted inside partials/content-page.php, content-single.php & content.php. Image sizes sett it in functions.php
-- Slider Custom Post Type create Orbit slider, check partials/content-slider.php for orbit template. home.php show the slider.
-- footer.php have Copyright, Year, Credits and Developer info. And WP tiny logo :)
-- hacks.php file with some WP core hacks, like remove useless widgets, wp logo from admin bar, logo from login and more.
-- Clearing markup for native gallery shortcode [gallery]. The markup is inside inc/new-gallery-markup.php. NOT FINISHED: the thumbnail size is not working :(
+- Thumbnail enable for Pages, Posts & Slider, inserted inside partials/content-page.php, content-single.php & content.php. Image sizes set it in functions.php
+- Slider Custom Post Type create Orbit slider, check partials/content-slider.php. check also templates/template-slider.php
+- footer.php have Copyright, Year, Credits and Developer info. And WP font icon logo :)
+- hacks.php file with some WP core hacks, like remove useless widgets, remove wp logo from admin bar, logo from login and more.
+- Clearing markup for native gallery shortcode [gallery]. The markup is inside inc/new-gallery-markup.php. NOT FINISHED: the thumbnail size not working :(
 - Support for foundation sub-nav in footer-menu in footer.php using new markup with custom walker. check inc/custom-menu-walker.php. NOT FINISHED: it doesn´t use current-menu-item to be replace it with active class.
 - JSs hacks for WP_Nav_Menu_Widget to use foundation side-nav classes. check js/app.js
 - Comments submit button use foundation small button round styles. check is/app.js
 - Use of FontIcons by http://icomoon.io/app. Styles in scss/icon-fonts.scss, how to use in fonts/index.html
 - Social fields for author profile. Facebook, Google Plus, Twitter & Linkedin.
 - Author Bio template under post inside partials/content-bio.php. Use font icons for social networks links.
+- Footer link for legal pages, selected on theme options panel. check: options.php and query in footer.php
+- Custom Comments & Comment Form. ALERT: it works but debuggin get me "NOTICE: it works but give me an "Undefined variable: aria_req ... post_id" looking for a solution :P
+
+
+Page Templates:
+- Right Sidebar
+- Left Sidebar
+- Slider
+- Contact
+SOON!
+- Portfolio
+- Custom Home Page
+- Gallery
 
 
 foundation settings
@@ -29,9 +42,9 @@ foundation settings
 - The foundation.min.css is generated using codekit and foundation components scss files as codekit framework. Thank good they don´t use COMPASS :)
 - scss/foundation have _variables.scss for foundation dimentions, gutter, etc. And foundation.scss wich calls all foundation scss files, if you don´t use codekit isert there the foundation scss files.
 - foundation javascrips are enqueued by inc/foundation.php.
-- js/foundation-setttings.js is to write foundation modules variables and settings. (not finish yet)
+- js/foundation-setttings.js is to write foundation modules variables and settings. NOT FINISHED.
 - All foundation js files are in js/foundation
-- app.js is special js for theme configuration, as add class for dropdown menu works.
+- app.js is special js for theme configuration, as add class for dropdown menu and others.
 - vento.js is in the footer.php.
 - top-bar navigation enable, its display site name in < ul.title-area .name > and use .hide-for-small to remove < header hgroup > for mobile screens.
 - top-bar use magellan plugin to fix the nav when scroll. check header.php
@@ -44,7 +57,10 @@ theme options framework
 Thanx @davinsays for create this https://github.com/devinsays/options-framework-theme, foundation_s is fully integrated with this framework
 
 - Just edit options.php file to create the options fields.
-- Logo field set and inserted into image in header h1. If there is not image will show the site name.
+- Brand settings: Upload a logo, links color, link hover color, menu color, menu link color, menu link color hover. This colors also affect to buttons.
+- Social Networks links: Facebook, Twitter, Linkedin, WP.org, Youtube, Vimeo, Google+, Instagram, Flickr, Dribbble.
+- Contact details: Address, Postal code, Location, Phone, Email, Google Maps (use url to display man inside an iframe)
+- Footer links: Select pages links to be in the footer like, Legal, Contact, Credits.
 
 
 
@@ -55,6 +71,9 @@ Advanced Custom Post Types Framework
 
 - foundation_s load the framework using inc/acpt.php
 - create post types, taxonomies & metaboxes in inc/acpt.php
+CPTS:
+- Slider
+- Portfolio
 
 
 
@@ -68,9 +87,10 @@ NOTE: style.css have the basic content styles from _s. I remove the rest becasue
 - header.scss (import slider.scss) for Orbit.
 - footer.scss
 - content.scss (for all post and pages content)
-- sidebar.scss
-
-
+- sidebars.scss
+- slider.scss
+- icon-font.scss (basic styles to use icomoon font icons)
+- comments.scss
 
 
 

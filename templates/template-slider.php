@@ -7,12 +7,12 @@ Template Name: Slider
  */
 
 get_header(); ?>
-
-	<?php get_template_part( 'partials/content', 'slider' ); ?>
 	
 	<div id="primary" class="content-area large-8 columns">
 		<div id="content" class="site-content" role="main">
-
+		<div class="row">
+		<?php get_template_part( 'partials/content', 'slider' ); ?>
+		</div>
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -32,7 +32,7 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'no-results', 'index' ); ?>
+			<?php get_template_part( 'partials/content','no-results' ); ?>
 
 		<?php endif; ?>
 

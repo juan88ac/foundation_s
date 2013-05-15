@@ -95,6 +95,7 @@ NOTE: style.css have the basic content styles from _s. I remove the rest becasue
 - slider.scss
 - icon-font.scss (basic styles to use icomoon font icons)
 - comments.scss
+- contact.scss
 
 
 

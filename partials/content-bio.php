@@ -52,24 +52,4 @@
 	</div>
 </div>
 <!--END .author-bio-->
-<!-- How to use the icons
-<span aria-hidden="true" class="icon-facebook"></span>
-<span aria-hidden="true" class="icon-twitter"></span>
-<span aria-hidden="true" class="icon-google-plus"></span>
-<span aria-hidden="true" class="icon-magnifying-glass"></span>
-<span aria-hidden="true" class="icon-vimeo"></span>
-<span aria-hidden="true" class="icon-wordpress"></span>
-<span aria-hidden="true" class="icon-github"></span>
-<span aria-hidden="true" class="icon-youtube"></span>
-<span aria-hidden="true" class="icon-instagram"></span>
-<span aria-hidden="true" class="icon-stumbleupon"></span>
-<span aria-hidden="true" class="icon-linkedin"></span>
-<span aria-hidden="true" class="icon-flag"></span>
-<span aria-hidden="true" class="icon-envelope"></span>
-<span aria-hidden="true" class="icon-dribbble"></span>
-<span aria-hidden="true" class="icon-star"></span>
-<span aria-hidden="true" class="icon-heart-fill"></span>
-<span aria-hidden="true" class="icon-comment-fill"></span>
-<span aria-hidden="true" class="icon-feed"></span>
-<span aria-hidden="true" class="icon-feed2"></span>
--->
+<!-- Check fonts/index.html to know how to use the icons -->

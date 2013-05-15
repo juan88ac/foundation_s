@@ -269,8 +269,15 @@ function optionsframework_options() {
 
 		$options[] = array(
 		'name' => __('Location', 'options_framework_theme'),
-		'desc' => __('i.e: Alaró - Baleares - Spain', 'options_framework_theme'),
+		'desc' => __('i.e: Caprica City', 'options_framework_theme'),
 		'id' => 'location',
+		'type' => 'text'
+		);
+		
+		$options[] = array(
+		'name' => __('State/Province', 'options_framework_theme'),
+		'desc' => __('i.e: Caprica', 'options_framework_theme'),
+		'id' => 'state',
 		'type' => 'text'
 		);
 

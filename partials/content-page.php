@@ -23,8 +23,8 @@
 	</header><!-- .entry-header -->
 
 	<div class="page-content">
+		<?php edit_post_link( __( 'Edit', '_s' ), '<footer class="page-meta"><span class="tiny button round edit-link">', '</span></footer>' ); ?>	
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', '_s' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', '_s' ), '<footer class="page-meta"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

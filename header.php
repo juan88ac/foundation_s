@@ -46,7 +46,7 @@
 <style type="text/css">
 	
 	<?php if($bgColor != ''): ?>
-		header#masthead hgroup, #main, footer#colophon { background-color: <?php echo $bgColor?>; background: <?php echo $bgColor?>; }
+		header#masthead hgroup, #main, footer#colophon, header#masthead #social-networks { background-color: <?php echo $bgColor?>; background: <?php echo $bgColor?>; }
 	<?php endif; ?>
 	<?php if($linksColor != ''): ?>
 		a, .pagination li a, .side-nav li a { color: <?php echo $linksColor?>; }
@@ -84,6 +84,41 @@
 
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
+		<?php
+			$fb_profile = of_get_option('fb_profile');
+			$fb_page = of_get_option('fb_page');
+			$twitter = of_get_option('twitter');
+			$linkedin = of_get_option('linkedin');
+			$gplus = of_get_option('google_plus');
+			$instagram = of_get_option('instagram');
+			$flickr = of_get_option('flickr');			
+		?>
+		<div id="social-networks" class="row">
+			<dl class="sub-nav large-12 columns">
+				<dt><?php _e('Social networks','_s'); ?></dt>
+			<?php if($fb_profile != ''): ?>
+				<dd><a href="<?php echo $fb_profile ?>"><span aria-hidden="true" class="icon-facebook"></span></a></dd>
+			<?php endif; ?>
+			<?php if($fb_page != ''): ?>
+				<dd><a href="<?php echo $fb_page ?>"><span aria-hidden="true" class="icon-facebook"></span></a></dd>
+			<?php endif; ?>
+			<?php if($twitter != ''): ?>
+				<dd><a href="<?php echo $twitter ?>"><span aria-hidden="true" class="icon-twitter"></span></a></dd>
+			<?php endif; ?>
+			<?php if($linkedin != ''): ?>
+				<dd><a href="<?php echo $linkedin ?>"><span aria-hidden="true" class="icon-linkedin"></span></a></dd>
+			<?php endif; ?>
+			<?php if($gplus != ''): ?>
+				<dd><a href="<?php echo $gplus ?>"><span aria-hidden="true" class="icon-google-plus"></span></a></dd>
+			<?php endif; ?>
+			<?php if($instagram != ''): ?>
+				<dd><a href="<?php echo $instagram ?>"><span aria-hidden="true" class="icon-instagram"></span></a></dd>
+			<?php endif; ?>
+			<?php if($flickr != ''): ?>
+				<dd><a href="<?php echo $flickr ?>"><span aria-hidden="true" class="icon-flickr"></span></a></dd>
+			<?php endif; ?>
+			</dl>
+		</div>
 		<hgroup class="hide-for-small row">
 			<h1 class="site-title large-12 small-12 columns">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">

@@ -23,6 +23,8 @@ It´s created to make theme developers life easier, mixing different frameworks 
 - Author Bio template under post inside partials/content-bio.php. Use font icons for social networks links.
 - Footer link for legal pages, selected on theme options panel. check: options.php and query in footer.php
 - Custom Comments & Comment Form. ALERT: it works but debuggin get me "NOTICE: it works but give me an "Undefined variable: aria_req ... post_id" looking for a solution :P
+- Header social links. check header.php
+- vcard inside contact page template. check partials/content-contact.php
 
 
 Page Templates:
@@ -30,9 +32,9 @@ Page Templates:
 - Left Sidebar
 - Slider
 - Contact
+- Front Page, it use slider. Next update: new layout
 SOON!
 - Portfolio
-- Custom Home Page
 - Gallery
 
 

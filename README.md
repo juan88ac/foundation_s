@@ -104,6 +104,8 @@ NOTE: style.css have the basic content styles from _s. I remove the rest becasue
 Getting Started with Theme functions. This are the same as `underscores`
 ---------------
 
+BEFORE START IMPORTANT, VERY IMPORTANT: exclude the foundation js folder when you rename the `_s` if not orbit.js stop working :P
+
 If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
 
 If you want to set things up manually, download `_s` from github. The first thing you want to do is copy the `_s` directory and change the name to something else — Like, say, `megatherium` — then you'll need to do a three-step find and replace on the name in all the templates.

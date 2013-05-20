@@ -1,6 +1,8 @@
 foundation_s
 ===
 
+Checkout a DEMO http://ns2136.boxqos.com/
+
 Based on starter theme called `_s`, or `underscores` & foundation zurb framework. check http://foundation.zurb.com/
 
 It´s created to make theme developers life easier, mixing different frameworks which simplify the launch of a new project. All this frameworks handle Custom post Types creation, Metaboxes, Responsive design, Theme options features.

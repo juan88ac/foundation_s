@@ -242,6 +242,13 @@ function optionsframework_options() {
 		);
 
 		$options[] = array(
+		'name' => __('Github Profile', 'options_framework_theme'),
+		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
+		'id' => 'github',
+		'type' => 'text'
+		);
+
+		$options[] = array(
 		'name' => __('Youtube Channel', 'options_framework_theme'),
 		'desc' => __('Paste full url with http://.', 'options_framework_theme'),
 		'id' => 'youtube_channel',

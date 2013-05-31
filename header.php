@@ -200,6 +200,7 @@
 			$linkedin = of_get_option('linkedin');
 			$gplus = of_get_option('google_plus');
 			$instagram = of_get_option('instagram');
+			$github = of_get_option('github');
 			$flickr = of_get_option('flickr');			
 		?>
 		<div id="social-networks" class="row">
@@ -222,6 +223,9 @@
 			<?php endif; ?>
 			<?php if($instagram != ''): ?>
 				<dd><a href="<?php echo $instagram ?>"><span aria-hidden="true" class="icon-instagram"></span></a></dd>
+			<?php endif; ?>
+			<?php if($github != ''): ?>
+				<dd><a href="<?php echo $github ?>"><span aria-hidden="true" class="icon-github"></span></a></dd>
 			<?php endif; ?>
 			<?php if($flickr != ''): ?>
 				<dd><a href="<?php echo $flickr ?>"><span aria-hidden="true" class="icon-flickr"></span></a></dd>

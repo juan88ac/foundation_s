@@ -33,6 +33,7 @@ It´s created to make theme developers life easier, mixing different frameworks 
 -- open graph metas. Check inc/hacks.php
 -- GEO metas using theme options
 -- Favicon and icons from theme options. NOT FINISHED.
+- Humans.txt
 
 
 

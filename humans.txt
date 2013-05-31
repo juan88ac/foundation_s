@@ -1,0 +1,33 @@
+/* TEAM */
+
+                            
+WP Consultant: Pancho Pérez.
+Contact: lonchbox[at]gmail.com
+Twitter: @lonchbox
+Location: Alaró, Baleares, Spain.
+
+							
+/* THANKS */
+
+
+ES Translator: 
+Twitter: 
+From: 
+Location:
+
+DE Translator: 
+Twitter: 
+From:
+Location:
+
+                            
+/* SITE */
+
+                            
+Last update: 2013/05/31 
+Standards: HTML5, CSS3, PHP, Javascript.
+Frameworks: Foundation Zurb
+Components: Modernizr, jQuery, Normalize.
+CMS: WordPress
+Platform: LAMP, Amazon Cloud, ServerPress.
+IDE: Coda 2, Codekit, Github App, Versions, Photoshop, Choosy.

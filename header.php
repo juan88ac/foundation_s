@@ -31,6 +31,7 @@
 <link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/images/favicon.png" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="author" href="<?php bloginfo ('template_url'); ?>/humans.txt" />
 
 
 <title><?php

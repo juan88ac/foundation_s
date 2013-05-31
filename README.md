@@ -27,6 +27,13 @@ It´s created to make theme developers life easier, mixing different frameworks 
 - Custom Comments & Comment Form. ALERT: it works but debuggin get me "NOTICE: it works but give me an "Undefined variable: aria_req ... post_id" looking for a solution :P
 - Header social links. check header.php
 - vcard inside contact page template. check partials/content-contact.php
+- SEO <head>: 
+-- title, description
+-- meta schemas. Check inc/hacks.php
+-- open graph metas. Check inc/hacks.php
+-- GEO metas using theme options
+-- Favicon and icons from theme options. NOT FINISHED.
+
 
 
 Page Templates:
@@ -65,6 +72,8 @@ Thanx @davinsays for create this https://github.com/devinsays/options-framework-
 - Social Networks links: Facebook, Twitter, Linkedin, WP.org, Youtube, Vimeo, Google+, Instagram, Flickr, Dribbble.
 - Contact details: Address, Postal code, Location, Phone, Email, Google Maps (use url to display man inside an iframe)
 - Footer links: Select pages links to be in the footer like, Legal, Contact, Credits.
+- GEO Metas
+- Favicon & touch icons
 
 
 
@@ -80,6 +89,14 @@ IMPORTANT: Don´t know why but when create the .zip file to download form github
 CPTS:
 - Slider
 - Portfolio
+
+
+Custom Metaboxes and Fields for WordPress
+===
+
+Thanx @jaredatch https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+
+- Help you create any kind of metabox.
 
 
 

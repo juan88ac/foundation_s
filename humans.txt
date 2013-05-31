@@ -1,3 +1,7 @@
+DEMO SITE: http://ns2136.boxqos.com/
+
+FUTURE SITE: http://lonchbox.com/foundation_s
+
 /* TEAM */
 
                             

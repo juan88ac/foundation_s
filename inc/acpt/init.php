@@ -22,8 +22,8 @@ add_action('save_post','acpt::save_form');
 if(ACPT_STYLES) add_action('admin_init', 'acpt::apply_css');
 if( is_admin() ) add_action('admin_enqueue_scripts', 'acpt::upload_scripts');
 
-// load plugins
 /*
+// load plugins
 if(ACPT_LOAD_PLUGINS == true) :
 	foreach($acptPlugins as $plugin) {
 		$pluginFile = '';
@@ -34,5 +34,5 @@ if(ACPT_LOAD_PLUGINS == true) :
 		}
 		include_once($pluginFile);
 	}
-endif;
+endif;if;
 */

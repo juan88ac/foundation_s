@@ -1,37 +1,46 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// This includes all of the foundation global elements that are needed to work with any of the other files.
 @import "variables";
-/* Each individual part that can be added in */
-@import "global";
-@import "grid";
-@import "visibility";
-@import "block-grid";
-@import "type";
-@import "buttons";
-@import "forms";
-@import "custom-forms";
-@import "button-groups";
-@import "dropdown-buttons";
-@import "split-buttons";
-@import "flex-video";
-@import "section";
-@import "top-bar";
-@import "orbit";
-@import "reveal";
-@import "joyride";
-@import "clearing";
-@import "alert-boxes";
-@import "breadcrumbs";
-@import "keystrokes";
-@import "labels";
-@import "inline-lists";
-@import "pagination";
-@import "panels";
-@import "pricing-tables";
-@import "progress-bars";
-@import "side-nav";
-@import "sub-nav";
-@import "switch";
-@import "magellan";
-@import "tables";
-@import "thumbs";
-@import "tooltips";
-@import "dropdown";
+
+// Foundation Components
+@import
+  "global",
+  "grid",
+  "visibility",
+  "block-grid",
+  "type",
+  "buttons",
+  "forms",
+  "custom-forms",
+  "button-groups",
+  "dropdown-buttons",
+  "split-buttons",
+  "flex-video",
+  "section",
+  "top-bar",
+  "orbit",
+  "reveal",
+  "joyride",
+  "clearing",
+  "alert-boxes",
+  "breadcrumbs",
+  "keystrokes",
+  "labels",
+  "inline-lists",
+  "pagination",
+  "panels",
+  "pricing-tables",
+  "progress-bars",
+  "side-nav",
+  "sub-nav",
+  "switch",
+  "magellan",
+  "tables",
+  "thumbs",
+  "tooltips",
+  "dropdown";
+
+
+

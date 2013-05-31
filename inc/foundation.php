@@ -39,6 +39,7 @@ function foundation_script() {
 	wp_enqueue_script('foundation.section',			get_template_directory_uri() . '/js/foundation/foundation.section.js', array('jquery') );	
 	wp_enqueue_script('foundation.tooltips',			get_template_directory_uri() . '/js/foundation/foundation.tooltips.js', array('jquery') );
 	wp_enqueue_script('foundation.topbar',			get_template_directory_uri() . '/js/foundation/foundation.topbar.js', array('jquery') );	
+	wp_enqueue_script('foundation.interchange',			get_template_directory_uri() . '/js/foundation/foundation.interchange.js', array('jquery') );	
 	wp_enqueue_script('foundation-settings', get_template_directory_uri() . '/js/foundation-settings-ck.js',array('jquery'),'1.0', true);
 }	
 	

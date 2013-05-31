@@ -279,6 +279,25 @@ require( get_template_directory() . '/inc/custom-gallery-markup.php' );
  */
 require( get_template_directory() . '/inc/custom-menu-walker.php' );
 
+
+
+/**
+ * Implement advanced custom post type framework
+ */
+require( get_template_directory() . '/inc/acpt.php' );
+
+/**
+ * Initialize the metabox class
+ */
+add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
+function be_initialize_cmb_meta_boxes() {
+	if ( !class_exists( 'cmb_Meta_Box' ) ) {
+		require_once( 'inc/metaboxes/example-metaboxes.php' );
+		require_once( 'inc/metaboxes/init.php' );
+
+	}
+}
+
 /* 
  * Loads the Options Panel
  *
@@ -291,7 +310,4 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	require_once dirname( __FILE__ ) . '/inc/options/options-framework.php';
 }
 
-/**
- * Implement advanced custom post type framework
- */
-require( get_template_directory() . '/inc/acpt.php' );
+

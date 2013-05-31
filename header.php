@@ -13,6 +13,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no," />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
+<?php /*CUSTOM STYLES*/
+	$favicon_ico = of_get_option('favicon_ico');
+	$favicon_png = of_get_option('favicon_png');
+	$icon_iphone = of_get_option('touch_icon_iphone');
+	$icon_iphone4 = of_get_option('touch_icon_iphone4');	
+	$icon_ipad3 = of_get_option('touch_icon_ipad3');		
+?>
+
 <!-- Setting favicon and Apple Touch Icon -->
 <link rel="apple-touch-icon" href="<?php bloginfo ('template_url');?>/images/touch-icon-iphone.png">
 <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo ('template_url');?>/images/touch-icon-ipad.png">
@@ -85,6 +93,18 @@
 	    <meta name="robots" content="noindex,follow" />
 		<meta name="msnbot" content="noindex,follow" />
 	<?php }?>
+
+	<meta name="title" content="<?php if((is_home()) || (is_front_page())) {
+	echo bloginfo('name'); bloginfo('description');
+	} elseif(is_category()) {
+	echo category_description();
+	} elseif(is_tag()) {
+	echo 'Tag archive page for this blog - ' . single_tag_title();
+	} elseif(is_month()) {
+	echo 'Archive page for this blog - ' . the_time('F, Y');
+	} else {
+	echo get_post_meta($post->ID, 'metadescription', true);
+	} ?>">
 	
 	<meta name="description" content="
 	<?php if((is_home()) || (is_front_page())) {
@@ -99,18 +119,10 @@
 	echo get_post_meta($post->ID, 'metadescription', true);
 	} ?>" />
 
-<meta name="geo.position" content="latitude; longitude">
-<meta name="geo.placename" content="Baleares">
-<meta name="geo.region" content="ES-PM">
-
-<!-- Schema.org Description -->
-<meta itemprop="name" content="<?php wp_title( '|', true, 'right' ); ?>">
-<meta itemprop="description" content="<?php bloginfo('description');?>">
-<meta itemprop="image" content="" />
- 
-<meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
-<meta property="og:description" content="<?php bloginfo('description');?>" /> 
-<meta property="og:image" content="" />
+<meta name="geo.region" content="<?php echo of_get_option('geo_region'); ?>" />
+<meta name="geo.placename" content="<?php echo of_get_option('geo_placename'); ?>" />
+<meta name="geo.position" content="<?php echo of_get_option('geo_position'); ?>" />
+<meta name="ICBM" content="<?php echo of_get_option('geo_icbm'); ?>" /> 
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>

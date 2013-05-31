@@ -232,3 +232,89 @@ function slt_lock_plugins( $actions, $plugin_file, $plugin_data, $context ) {
 }
 add_filter( 'plugin_action_links', 'slt_lock_plugins', 10, 4 );
 */
+
+/*
+<!-- Begin FB Sharing for WP by Chad Von Lind. Get the latest code here: http://vonlind.com/?p=539  -->
+<?php
+	$thumb = get_post_meta($post->ID,'_thumbnail_id',false);
+	$thumb = wp_get_attachment_image_src($thumb[0], false);
+	$thumb = $thumb[0];
+	$default_img = get_bloginfo('stylesheet_directory').'/images/og-icon.jpg';
+?>
+ 
+<?php if(is_single() || is_page()) { ?>
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="<?php single_post_title(''); ?>" />
+	<meta property="og:description" content="<?php 
+	while(have_posts()):the_post();
+	$out_excerpt = str_replace(array("\r\n", "\r", "\n"), "", get_the_excerpt());
+	echo apply_filters('the_excerpt_rss', $out_excerpt);
+	endwhile; 	?>" />
+	<meta property="og:url" content="<?php the_permalink(); ?>"/>
+	<meta property="og:image" content="<?php if ( $thumb[0] == null ) { echo $default_img; } else { echo $thumb; } ?>" />
+<?php  } else { ?>
+	<meta property="og:type" content="article" />
+   <meta property="og:title" content="<?php bloginfo('name'); ?>" />
+	<meta property="og:url" content="<?php bloginfo('url'); ?>"/>
+	<meta property="og:description" content="<?php bloginfo('description'); ?>" />
+    <meta property="og:image" content="<?php  if ( $thumb[0] == null ) { echo $default_img; } else { echo $thumb; } ?>" />
+<?php  }  ?>
+<!-- End FB Sharing for WP -->
+*/
+
+
+//Adding the Open Graph in the Language Attributes
+function add_opengraph_doctype( $output ) {
+		return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+	}
+add_filter('language_attributes', 'add_opengraph_doctype');
+
+//Lets add Open Graph Meta Info
+
+function insert_fb_in_head() {
+	global $post;
+	if ( !is_singular()) //if it is not a post or a page
+		return;
+        echo '<meta property="fb:admins" content="YOUR USER ID"/>'; //http://findmyfacebookid.com/
+        echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+
+	while(have_posts()):the_post();
+		$out_excerpt = str_replace(array("\r\n", "\r", "\n"), "", get_the_excerpt());
+		echo '<meta property="og:description" content="'. apply_filters('the_excerpt_rss', $out_excerpt).'"/>';
+	endwhile;
+
+        echo '<meta property="og:type" content="article"/>';
+        echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+        echo '<meta property="og:site_name" content="'. get_bloginfo('name').'"/>';
+	if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
+		$default_image="http://example.com/image.jpg"; //replace this with a default image on your server or an image in your media library
+		echo '<meta property="og:image" content="' . $default_image . '"/>';
+	}
+	else{
+		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+	}
+	echo "
+";
+}
+add_action( 'wp_head', 'insert_fb_in_head', 5 );
+
+
+// Schema.org Description metas
+
+function insert_schema_in_head() {
+	global $post;
+	echo '<meta itemprop="name" content="'. get_bloginfo('name') .'"/>';
+	echo '<meta itemprop="description" content="'. get_bloginfo('description') .'"/>';
+	if(!has_post_thumbnail( $post->ID )) { //the post does not have featured image, use a default image
+		$default_image="http://example.com/image.jpg"; //replace this with a default image on your server or an image in your media library
+		echo '<meta itemprop="image" content="' . $default_image . '"/>';
+	}
+	else{
+		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		echo '<meta itemprop="image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+	}
+	echo "
+";
+}
+add_action( 'wp_head', 'insert_schema_in_head', 6 );

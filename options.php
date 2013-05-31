@@ -165,6 +165,42 @@ function optionsframework_options() {
 		'id' => 'button_hover_color_menu',
 		'type' => 'color');
 		
+		$options[] = array(
+		'name' => __('Favicon ICO', 'options_framework_theme'),
+		'desc' => __('Use http://www.favicon.cc/ to create .ico file.', 'options_framework_theme'),
+		'id' => 'favicon_ico',
+		'type' => 'upload'
+		);
+
+		$options[] = array(
+		'name' => __('Favicon PNG', 'options_framework_theme'),
+		'desc' => __('Can be 16x16px or 32x32px PNG file.', 'options_framework_theme'),
+		'id' => 'favicon_png',
+		'type' => 'upload'
+		);
+
+		$options[] = array(
+		'name' => __('iPhone & iPad Icon', 'options_framework_theme'),
+		'desc' => __('72x72 PNG image. Or use http://www.pic2icon.com/site_icon_for_iphone_ipad_generator.php', 'options_framework_theme'),
+		'id' => 'touch_icon_iphone',
+		'type' => 'upload'
+		);
+
+		$options[] = array(
+		'name' => __('iPhone 4', 'options_framework_theme'),
+		'desc' => __('114x114 PNG image. Or use http://www.pic2icon.com/site_icon_for_iphone_ipad_generator.php', 'options_framework_theme'),
+		'id' => 'touch_icon_iphone4',
+		'type' => 'upload'
+		);
+
+		$options[] = array(
+		'name' => __('iPad 3', 'options_framework_theme'),
+		'desc' => __('144x144 PNG image. Or use http://www.pic2icon.com/site_icon_for_iphone_ipad_generator.php', 'options_framework_theme'),
+		'id' => 'touch_icon_ipad3',
+		'type' => 'upload'
+		);
+
+		
 		/* Social networks links */
 		$options[] = array(
 			'name' => __('Social Networks', 'options_framework_theme'),
@@ -316,6 +352,39 @@ function optionsframework_options() {
 		'type' => 'multicheck',
 		'options' => $options_pages);		
 		
+
+		/* MetaSEO details - Used in contact template */
+		$options[] = array(
+			'name' => __('GEO Metas', 'options_framework_theme'),
+			'type' => 'heading');
+	
+		$options[] = array(
+		'name' => __('Region', 'options_framework_theme'),
+		'desc' => __('Find it here http://www.geo-tag.de/generator/en.html', 'options_framework_theme'),
+		'id' => 'geo_region',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Place name', 'options_framework_theme'),
+		'desc' => __('Find it here http://www.geo-tag.de/generator/en.html', 'options_framework_theme'),
+		'id' => 'geo_placename',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('Position', 'options_framework_theme'),
+		'desc' => __('Find it here http://www.geo-tag.de/generator/en.html', 'options_framework_theme'),
+		'id' => 'geo_position',
+		'type' => 'text'
+		);
+
+		$options[] = array(
+		'name' => __('ICBM', 'options_framework_theme'),
+		'desc' => __('Find it here http://www.geo-tag.de/generator/en.html', 'options_framework_theme'),
+		'id' => 'geo_icbm',
+		'type' => 'text'
+		);
 
 
 	return $options;

@@ -13,23 +13,119 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no," />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
-<!-- Schema.org Description -->
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-
 <!-- Setting favicon and Apple Touch Icon -->
-<link rel="apple-touch-icon" href="<?php bloginfo ("template_url");?>/images/touch-icon-iphone.png">
-<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo ("template_url");?>/images/touch-icon-ipad.png">
-<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo ("template_url");?>/images/touch-icon-iphone4.png">
-<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo ("template_url");?>/images/touch-icon-ipad3.png">
-<link rel="icon" type="image/png" href="<?php bloginfo ("template_url"); ?>/images/favicon.ico">
-
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<link rel="apple-touch-icon" href="<?php bloginfo ('template_url');?>/images/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo ('template_url');?>/images/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo ('template_url');?>/images/touch-icon-iphone4.png">
+<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo ('template_url');?>/images/touch-icon-ipad3.png">
+<link rel="icon" type="image/png" href="<?php bloginfo ('template_url'); ?>/images/favicon.ico">
+<link rel="canonical" href="<?php bloginfo ('url'); ?>"/>
+<link rel="shortcut icon" href="<?php bloginfo ('template_url'); ?>/images/favicon.png" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lte IE 7]><script src="<?php echo get_template_directory_uri(); ?>/lte-ie7.js"></script><![endif]-->
+
+
+<title><?php
+		/*
+		 * Print the <title> tag based on what is being viewed.
+		 */
+		global $page, $paged;
+	
+		wp_title( '|', true, 'right' );
+	
+		// Add the blog name.
+		bloginfo( 'name' );
+	
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) )
+			echo " | $site_description";
+	
+		// Add a page number if necessary:
+		if ( $paged >= 2 || $page >= 2 )
+			echo ' | ' . sprintf( __( 'Page %s', 'olahotels_base' ), max( $paged, $page ) );
+	
+		?>
+</title>
+	
+	<?php
+	if (is_single() || is_category() || is_tag()) {
+	$postTags = get_the_tags();
+	$tagNames = array();
+	if($postTags){
+	foreach($postTags as $tag) {
+	$tagNames[] = $tag->name;
+	}
+	}
+	}
+	?>
+	<?php
+	//if single post then add excerpt as meta description
+	if (is_single()) {
+	?>
+	<meta name="keywords" content="<?php echo implode($tagNames,","); ?>" />
+	<?php
+	//if homepage use standard meta description
+	} else if(is_home() || is_page()) {
+	?>
+	<meta name="keywords" content="<?php get_bloginfo ( 'description' );?>" />
+	<?php
+	//if category page, use category description as meta description
+	} else if(is_category()) {
+	?>
+	<meta name="keywords" content="<?php echo implode($tagNames,","); ?>" />
+	<?php } ?>
+	
+	<?php if(is_single() || is_page() || is_home()) { ?>
+	    <meta name="googlebot" content="index,noarchive,follow,noodp" />
+	    <meta name="robots" content="all,index,follow" />
+		<meta name="msnbot" content="all,index,follow" />
+	<?php } else { ?>
+	    <meta name="googlebot" content="noindex,noarchive,follow,noodp" />
+	    <meta name="robots" content="noindex,follow" />
+		<meta name="msnbot" content="noindex,follow" />
+	<?php }?>
+	
+	<meta name="description" content="
+	<?php if((is_home()) || (is_front_page())) {
+	echo bloginfo('name'); bloginfo('description');
+	} elseif(is_category()) {
+	echo category_description();
+	} elseif(is_tag()) {
+	echo 'Tag archive page for this blog - ' . single_tag_title();
+	} elseif(is_month()) {
+	echo 'Archive page for this blog - ' . the_time('F, Y');
+	} else {
+	echo get_post_meta($post->ID, 'metadescription', true);
+	} ?>" />
+
+<meta name="geo.position" content="latitude; longitude">
+<meta name="geo.placename" content="Baleares">
+<meta name="geo.region" content="ES-PM">
+
+<!-- Schema.org Description -->
+<meta itemprop="name" content="<?php wp_title( '|', true, 'right' ); ?>">
+<meta itemprop="description" content="<?php bloginfo('description');?>">
+<meta itemprop="image" content="" />
+ 
+<meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>" />
+<meta property="og:description" content="<?php bloginfo('description');?>" /> 
+<meta property="og:image" content="" />
+
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<!--[if IE 7]>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie7.css">
+<![endif]-->
+
+<!--[if IE 8]>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie8.css">
+<![endif]-->
+
+<!--[if IE 9]>
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/ie9.css">
 <![endif]-->
 
 <?php wp_head(); ?>

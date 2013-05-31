@@ -5,7 +5,7 @@
  * @package _s
  */
 ?>
-	<div id="secondary" class="widget-area large-4 columns" role="complementary">
+	<div id="secondary" class="widget-area large-4 pull-8 columns" role="complementary">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-3' ) ) : ?>
 

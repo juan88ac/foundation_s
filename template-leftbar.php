@@ -11,9 +11,8 @@ Template Name: Left Sidebar
  */
 
 get_header(); ?>
-<?php get_sidebar('left'); ?>
 
-	<div id="primary" class="content-area large-8 columns">
+	<div id="primary" class="content-area large-8 push-4 columns">
 		<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -31,4 +30,5 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
+<?php get_sidebar('left'); ?>
 <?php get_footer(); ?>

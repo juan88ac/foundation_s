@@ -284,7 +284,7 @@ require( get_template_directory() . '/inc/custom-menu-walker.php' );
 /**
  * Implement advanced custom post type framework
  */
-require( get_template_directory() . '/inc/acpt.php' );
+include('acpt/init.php');
 
 /**
  * Initialize the metabox class
